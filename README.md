@@ -1,6 +1,6 @@
 # sistemaLogin 
 1. Sistema para cadastro e validação de usuários.
-2. Validações  com yup e mainipulação de  estado com unform
+2. Validações  com yup e manipulação de estado com unform.
 ## módulos
 
 O app contém os seguintes módulos
