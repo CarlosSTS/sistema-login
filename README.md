@@ -8,7 +8,6 @@ O app contém os seguintes módulos
 * uma tela de Login para validação de usuário
 * uma tela de Cadastro para cadastro de usuário
 
-
 ## Explicação do sistema no LinkedIn
 * [Explicação do sistema](https://www.linkedin.com/posts/carlos-ferreira-4b2ba219a_js-reactjs-reactnative-activity-6804807231524110336-uvB4)
 
