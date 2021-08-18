@@ -35,8 +35,7 @@ RODANDO O PROJETO NO BACKEND
 * faça uma criação de um Clusters no seu mongoDB e troque os nomes aplicativo1 para o nome do seu admin e password pela senha gerada automaticamente no mongoDB
 * O dbname será o nome do banco, isso fica a sua escolha, no meu caso o nome escolhido foi sistemaLogin.
 * Retire também os <> quando adicionar a senha e o nome do banco para fazer a conexão
-* essas informações podem ser vista em Database Access logo depois da geração do seu Clusters
-
+* essas informações podem ser vistas em Database Access logo depois da geração do seu Clusters
 
 ## Feito por Carlos Ferreira
 * [Github](https://www.github.com/CarlosSTS)
