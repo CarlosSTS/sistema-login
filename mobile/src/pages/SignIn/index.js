@@ -1,8 +1,8 @@
-import React, {useRef, useState} from 'react';
-import {Alert} from 'react-native'
-import {useNavigation} from '@react-navigation/native';
-import api from '../../services/api'
-import {expo} from '../../../app.json';
+import React, { useRef, useState } from "react";
+import { Alert } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import api from "../../services/api";
+import { expo } from "../../../app.json";
 
 import {
   Container,
@@ -12,35 +12,33 @@ import {
   SignLink,
   SignLinkText,
   Footer,
-} from './styles';
+} from "./styles";
 
 function SignIn() {
   const navigation = useNavigation();
   const passwordRef = useRef();
   const [loading, setLoading] = useState(false);
-  const [email, setEmail] = useState('carlossts826@gmail.com');
-  const [password, setPassword] = useState('1q2w3e4r');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   async function handleSubmit() {
-    if(email === '' || password === '') {
-      return Alert.alert('Aviso', 'Verifique se preencheu todos os seus dados')
+    if (!email || !password) {
+      return Alert.alert("Aviso", "Verifique se preencheu todos os seus dados");
     }
-    setLoading(true)
-      try {
-        const response = await  api.post('/session', { email,password })
-        navigation.navigate('Dashboard',response.data.userName)
+    setLoading(true);
+    try {
+      const response = await api.post("/session", { email, password });
+      navigation.navigate("Dashboard", response.data.userName);
+    } catch (err) {
+      Alert.alert("Sentimos muito", "tente novamente mais tarde.");
+    } finally {
+      setLoading(false);
+    }
+  }
 
-      }catch(err) {
-        Alert.alert('Sentimos muito', 'tente novamente mais tarde.')
-      }finally {
-        setLoading(false)
-      }
-    }
-  
   return (
     <>
       <Container>
-
         <Form>
           <FormInput
             icon="mail-outline"
@@ -64,18 +62,20 @@ function SignIn() {
             onChangeText={setPassword}
             value={password}
           />
-          
+
           <SubmitButton
             loading={loading}
-            onPress={() => handleSubmit(email, password)}>
+            onPress={() => handleSubmit(email, password)}
+          >
             Acessar
           </SubmitButton>
         </Form>
 
         <SignLink
           onPress={() => {
-            navigation.navigate('SignUp');
-          }}>
+            navigation.navigate("SignUp");
+          }}
+        >
           <SignLinkText>Criar conta gratuita</SignLinkText>
         </SignLink>
         <Footer>{expo.version}</Footer>
