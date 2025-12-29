@@ -7,7 +7,7 @@ const routes = require('./routes')
 const app = express()
 
 app.use(cors())
-mongoose.connect('mongodb+srv://sistemaLogin:c1a2r3s4@sistemaalugue.ifdez.mongodb.net/sistemaAlugue?retryWrites=true&w=majority',{
+mongoose.connect('mongodb+srv://YOUR_CONNECTION_STRING',{
 useNewUrlParser: true,
 useUnifiedTopology: true
 });
